@@ -27,7 +27,7 @@ useEffect(()=>{
      try {
       const response = await axios.get("https://fakestoreapi.com/products");
 setProducts(response.data) 
-setTotalPages(Math.round(response.data.length / 5))  
+setTotalPages(Math.ceil(response.data.length / 5))  
     } catch (error) {
         console.error(error)
     }
@@ -43,10 +43,11 @@ if(products.length === 0){
  return <div>
 <h1>Products</h1>
 <button onClick={() => setAscending(!ascending)}>{ascending ? "Show the highest prices": "Show the lowest prices"}</button>
-<input type="text" value={filter} onChange={e => setFilter(e.target.value)} />
-{visibleProductsOrder.map(product => <li key={product.id}> <p>{product.title}</p> <p>{product.price}</p> </li>) }
-<button onClick={() => {setPage(page + 1); }}>Next</button>
-<button onClick={() => {setPage(page - 1); }}>Back</button>
+<input type="text" value={filter} onChange={e => {setFilter(e.target.value); setPage(1)}} />
+<ul>
+{visibleProductsOrder.map(product => <li key={product.id}> <p>{product.title}</p> <p>{product.price}</p> </li>) }</ul>
+<button disabled={page === 1} onClick={() => {setPage(page + 1); }}>Next</button>
+<button disabled={page === totalPages} onClick={() => {setPage(page - 1); }}>Back</button>
 {totalPages && <p>{`page ${page} of ${totalPages}`}</p> }
   </div>
   }
