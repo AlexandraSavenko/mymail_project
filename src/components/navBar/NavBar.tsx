@@ -12,6 +12,9 @@ return <div>
         <li>
             <NavLink to={"/users"}>Users</NavLink>
         </li>
+        <li>
+            <NavLink to={"/lottiebtn"}>LottieButton</NavLink>
+        </li>
     </ul>
 </div>
 }
