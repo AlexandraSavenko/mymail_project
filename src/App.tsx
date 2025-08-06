@@ -1,4 +1,8 @@
+import { Route, Routes } from "react-router-dom";
+import NavBar from "./components/navBar/NavBar";
 import Users from "./pages/users/Users";
+import Products from "./pages/products/Products";
+import HomePage from "./pages/homePage/HomePage";
 
 
 
@@ -6,8 +10,13 @@ import Users from "./pages/users/Users";
 function App() {
   
  return <div>
-<h1>My App</h1>
-<Users/>
+<NavBar/>
+<Routes>
+  <Route path="/" element={<HomePage/>}/>
+  <Route path="/products" element={<Products/>} />
+  <Route path="/Users" element={<Users/>}/>
+</Routes>
+
   </div>
   }
 
