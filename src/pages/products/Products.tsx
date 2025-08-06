@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { fetchData } from "../../utils/operation";
+import { fetchProducts } from "../../utils/operation";
+
 
 interface Product {
         id: number,
@@ -25,7 +26,7 @@ const Products = () => {
 useEffect(()=>{
   const getProducts = async () => {
      try {
-      const response = await fetchData()
+      const response = await fetchProducts()
 setProducts(response) 
 setTotalPages(Math.ceil(response.length / 5))  
     } catch (error) {
