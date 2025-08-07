@@ -15,6 +15,9 @@ return <div>
         <li>
             <NavLink to={"/lottiebtn"}>LottieButton</NavLink>
         </li>
+        <li>
+            <NavLink to={"/pform"}>passwordForm</NavLink>
+        </li>
     </ul>
 </div>
 }

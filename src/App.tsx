@@ -5,6 +5,7 @@ import Products from "./pages/products/Products";
 import HomePage from "./pages/homePage/HomePage";
 import LottieMicrophone from "./pages/lottieMicrophone/LottieMicrophone";
 import "./App.css"
+import PasswordForm from "./pages/passwordForm/PasswordForm";
 
 
 
@@ -18,6 +19,7 @@ function App() {
   <Route path="/products" element={<Products/>} />
   <Route path="/Users" element={<Users/>}/>
   <Route path="/lottiebtn" element={<LottieMicrophone/>}/>
+  <Route path="/pform" element={<PasswordForm/>}/>
 </Routes>
 
   </div>
